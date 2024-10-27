@@ -4,6 +4,7 @@ CFLAGS=-std=c99
 default: main
 
 main: 
+	mkdir -p build
 	$(CC) $(CFLAGS) -o build/main src/main.c
 
 run:
