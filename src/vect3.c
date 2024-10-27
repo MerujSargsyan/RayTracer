@@ -1,6 +1,6 @@
 #include <vect3.h>
 
-void Vect3AddP(Vect3& v1, Vect3 v2) {
+void Vect3AddP(Vect3* v1, Vect3 v2) {
     v1->x += v2.x;
     v1->y += v2.y;
     v1->z += v2.z;
@@ -20,7 +20,7 @@ Vect3 Vect3Neg(Vect3 v) {
     return v;
 }
 
-void Vect3ScaleP(Vect3& v1, double s) {
+void Vect3ScaleP(Vect3* v1, double s) {
     v1->x *= s;
     v1->y *= s;
     v1->z *= s;
@@ -34,6 +34,7 @@ Vect3 Vect3Scale(Vect3 v1, double s) {
 }
 
 double Vect3Len(Vect3 v1) {
+    double sum = 0;
     sum += v1.x;
     sum += v1.y;
     sum += v1.z;
@@ -42,7 +43,7 @@ double Vect3Len(Vect3 v1) {
     return sum;
 }
 
-void Vect3NormP(Vect3& v1) {
+void Vect3NormP(Vect3* v1) {
     double sum = sqrt(sum);
 
     v1->x /= sum;
@@ -50,7 +51,7 @@ void Vect3NormP(Vect3& v1) {
     v1->z /= sum;
 }
 
-Vect3 Vect3NormP(Vect3 v1) {
+Vect3 Vect3Norm(Vect3 v1) {
     double sum = Vect3Len(v1);
 
     v1.x /= sum;
@@ -59,4 +60,12 @@ Vect3 Vect3NormP(Vect3 v1) {
     return v1;
 }
 
+double Vect3Dot(Vect3 v1, Vect3 v2) {
+    return (v1.x * v2.x) + 
+           (v1.y * v2.y) + 
+           (v1.z * v2.z);
+}
 
+Vect3 Vect3Cross(Vect3 v1, Vect3 v2) {
+   return (Vect3){0, 0, 0};
+}

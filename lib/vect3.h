@@ -12,18 +12,20 @@ typedef Vect3 Point;
 
 // NOTE: Ending of P implies in place operation
 
-void Vect3AddP(Vect3& v1, Vect3 v2);
+void Vect3AddP(Vect3* v1, Vect3 v2);
 Vect3 Vect3Add(Vect3 v1, Vect3 v2);
 
 Vect3 Vect3Neg(Vect3 v);
 
-void Vect3ScaleP(Vect3& v1, double s);
+void Vect3ScaleP(Vect3* v1, double s);
 Vect3 Vect3Scale(Vect3 v1, double s);
 
 double Vect3Len(Vect3 v1);
 
-void Vect3NormP(Vect3& v1);
+void Vect3NormP(Vect3* v1);
 Vect3 Vect3Norm(Vect3 v1);
 
+double Vect3Dot(Vect3 v1, Vect3 v2);
+Vect3 Vect3Cross(Vect3 v1, Vect3 v2);
 
 #endif

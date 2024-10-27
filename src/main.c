@@ -1,11 +1,16 @@
 #include <stdio.h>
+#include <vect3.h>
 
 int main() {
+    Vect3 v = (Vect3){0, 0, 0};
+    Vect3Norm(v);
+
     int image_width = 256;
     int image_height = 256;
 
     printf("P3\n");
     printf("%d %d\n255\n", image_width, image_height);
+
     for(int j = 0; j < image_height; j++) {
         for(int i = 0; i < image_width; i++) {
             double r = (double)i / (image_width - 1);
