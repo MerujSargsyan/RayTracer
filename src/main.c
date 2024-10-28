@@ -3,8 +3,12 @@
 #include <ray.h>
 
 int main() {
-    int image_width = 256;
-    int image_height = 256;
+    int image_width = 400;
+    int image_height;
+    float aspect_ratio = 16.0f/9.0f;
+
+    image_height = (int)(9.0f * image_width/ 16.0f);
+    if(image_height < 1) image_height = 1;
 
     printf("P3\n");
     printf("%d %d\n255\n", image_width, image_height);
