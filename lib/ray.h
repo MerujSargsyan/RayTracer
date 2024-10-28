@@ -8,8 +8,8 @@ typedef struct {
     Vect3 direction;
 } Ray;
 
-Point RayAt(Ray r, double t) {
-    return r.origin + t*r.direction; 
+Point RayAt(Ray r, float t) {
+    return Vect3Add(r.origin, Vect3Scale(r.direction, t)); 
 }
 
 #endif

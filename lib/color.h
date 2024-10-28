@@ -8,9 +8,9 @@
 typedef Vect3 Color;
 
 void ColorWrite(FILE* fd, Color pixel_color) {
-    double r = pixel_color.x;
-    double g = pixel_color.y;
-    double b = pixel_color.z;
+    float r = pixel_color.x;
+    float g = pixel_color.y;
+    float b = pixel_color.z;
 
     int rbyte = (int)(255.999 * r);
     int gbyte = (int)(255.999 * g);

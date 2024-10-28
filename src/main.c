@@ -1,5 +1,6 @@
 #include <vect3.h>
 #include <color.h>
+#include <ray.h>
 
 int main() {
     int image_width = 256;
@@ -12,8 +13,8 @@ int main() {
         fprintf(stderr, "\rScans remaining: %d", image_height - j);
         fflush(stderr);
         for(int i = 0; i < image_width; i++) {
-            double r = (double)i / (image_width - 1);
-            double g = (double)j / (image_height - 1);
+            float r = (float)i / (image_width - 1);
+            float g = (float)j / (image_height - 1);
 
             Color c = (Color){r, g, 0.0};
             ColorWrite(stdout, c);
