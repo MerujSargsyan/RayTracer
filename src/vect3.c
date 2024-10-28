@@ -67,5 +67,8 @@ double Vect3Dot(Vect3 v1, Vect3 v2) {
 }
 
 Vect3 Vect3Cross(Vect3 v1, Vect3 v2) {
-   return (Vect3){0, 0, 0};
+    return (Vect3)
+                {v1.y * v2.z - v1.z * v2.y,
+                 v1.x * v2.z - v1.z * v2.x,
+                 v1.x * v2.y - v1.y * v2.x};
 }
